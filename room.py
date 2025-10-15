@@ -44,7 +44,7 @@ class Room:
         if isinstance(val,List[Meeting]):
             self.meetings = val
     
-    # Calcula el minimo de cuartos en la instancia actual del cuarto (object oriented)
+    # Gets the minimum rooms for the current meetings (object oriented)
     def getCurrentMinimumRooms():
         if len(self.meetings) == 0:
             return 0
@@ -72,7 +72,7 @@ class Room:
 
 
 
-    # Calcula el minimo de cuartos on the fly (como lo indica el problema)    
+    # Gets the minimum rooms with on the fly meeting lists (como lo indica el problema)    
     def getMinimumRooms(meetings: list[Meeting]):
         if len(meetings) == 0:
             return 0
