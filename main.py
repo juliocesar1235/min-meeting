@@ -13,6 +13,8 @@ def main():
     for i in range(len(room1.meetings)):
         print(f"Meeting {i+1} " + "Interval:" + str(room1.meetings[i].bookedInterval))
         print("Members", room1.meetings[i].getMemberNames())
+    
+    badMember = Member("Badd", "mdaeldma")
 
     members2 = [Member("Jarjar", "binks@gmail.com"), Member("C3PO", "master123@gmail.com")]
     # here it can also be improved to only assign roomIds after we find that dont overlap with other meetings

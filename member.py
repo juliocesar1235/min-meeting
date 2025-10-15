@@ -3,7 +3,7 @@ import re
 class Member:
     def __init__(self, name, email):
         self._name = name
-        self._email = email
+        self.email = email
     
     @property
     def name(self):
