@@ -1,63 +1,63 @@
-import Meeting
+from meeting import Meeting
 class Room:
-    def __init__(self, id, location, meetings):
-        self.id = id
-        self.name = name
-        self.location = location
-        self.meetings = meetings
+    def __init__(self, rId, name,location, meetings=[]):
+        self._rId = rId
+        self._name = name
+        self._location = location
+        self._meetings = meetings
 
     @property
-    def id(self):
-        return self.id
+    def rId(self):
+        return self._rId
     
-    @id.setter
-    def id(self, val):
+    @rId.setter
+    def rId(self, val):
         if isinstance(val,int):
-            self.id = val
+            self._rId = val
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @name.setter
     def name(self, val):
         if isinstance(val,str):
-            self.name = val
+            self._name = val
     
     @property
     def location(self):
-        return self.location
+        return self._location
     
     @location.setter
     def location(self, val):
         # will leave the location as string for now but here we can use a more complex object to store geolocation data 
         # like latitude, longitude, etc.
         if isinstance(val,str):
-            self.location = val
+            self._location = val
     
     @property
     def meetings(self):
-        return self.meetings
+        return self._meetings
     
     @meetings.setter
     def meetings(self, val):
-        if isinstance(val,List[Meeting]):
-            self.meetings = val
+        if isinstance(val,list):
+            self._meetings = val
     
     # Gets the minimum rooms for the current meetings (object oriented)
-    def getCurrentMinimumRooms():
-        if len(self.meetings) == 0:
+    def getCurrentMinimumRooms(self):
+        if len(self._meetings) == 0:
             return 0
         
         startTimes = []
         endTimes = []
         numRooms = 0
 
-        for i, meeting in enumerate(self.meetings):
+        for i, meeting in enumerate(self._meetings):
             interval = meeting.bookedInterval
             if interval:
-                startTime.append(interval[0])
-                endTime.append(interval[1])
+                startTimes.append(interval[0])
+                endTimes.append(interval[1])
         
         startTimes.sort()
         endTimes.sort()
@@ -73,7 +73,7 @@ class Room:
 
 
     # Gets the minimum rooms with on the fly meeting lists (como lo indica el problema)    
-    def getMinimumRooms(meetings: list[Meeting]):
+    def getMinimumRooms(self, meetings: list[Meeting]):
         if len(meetings) == 0:
             return 0
         
@@ -84,8 +84,8 @@ class Room:
         for i, meeting in enumerate(meetings):
             interval = meeting.bookedInterval
             if interval:
-                startTime.append(interval[0])
-                endTime.append(interval[1])
+                startTimes.append(interval[0])
+                endTimes.append(interval[1])
         
         startTimes.sort()
         endTimes.sort()

@@ -2,25 +2,25 @@ import re
 
 class Member:
     def __init__(self, name, email):
-        self.name = name
-        self.email = email
+        self._name = name
+        self._email = email
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @name.setter
     def name(self, val):
-        self.name = val
+        self._name = val
     
     @property
     def email(self):
-        return self.email
+        return self._email
     
     @email.setter
     def email(self, val):
-        valid = re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email)
+        valid = re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', val)
         if valid:
-            self.email = val
+            self._email = val
         else:
             print("invalid email")
