@@ -30,7 +30,8 @@ class Room:
     
     @location.setter
     def location(self, val):
-        # will leave the location as string for now but here we can use a more complex object to store geolocation data latitude, longitude, etc.
+        # will leave the location as string for now but here we can use a more complex object to store geolocation data 
+        # like latitude, longitude, etc.
         if isinstance(val,str):
             self.location = val
     
